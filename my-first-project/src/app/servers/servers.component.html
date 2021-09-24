@@ -2,7 +2,7 @@
 <p>{{ inputText }}</p> -->
 
 <input type="text" class="form-control" [(ngModel)]="inputText">
-<p>{{ inputText }}</p>
+<!-- <p>{{ inputText }}</p> -->
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreate()">Add Server</button>
 <p>{{ createServerStatus }}</p>
