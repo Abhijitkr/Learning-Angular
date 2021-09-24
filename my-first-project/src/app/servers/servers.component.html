@@ -5,6 +5,8 @@
 <!-- <p>{{ inputText }}</p> -->
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreate()">Add Server</button>
-<p>{{ createServerStatus }}</p>
+<!-- <p>{{ createServerStatus }}</p> -->
+
+<p *ngIf="serverInput">Server was created with the name of {{ inputText }}</p>
 <app-server></app-server>
 <app-server></app-server>
