@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  count:number = 1;
-  numbs:Number[] = [];
+  // count:number = 1;
+  numbs:any[] = [];
   showSecret = false;
 
   addLogs(){
     this.showSecret = !this.showSecret;
-    this.numbs.push(this.count);
-    this.count++;
+    this.numbs.push(new Date());
+    // this.count++;
   }
 
 }
