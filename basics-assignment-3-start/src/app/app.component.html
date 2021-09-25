@@ -11,7 +11,9 @@
       <hr>
       <button class="btn btn-primary" (click)="addLogs()">Display Details</button>
       <p *ngIf="showSecret">Secret Password = tuna</p>
-      <p *ngFor="let num of numbs">{{ numbs }} {{ count }}</p>
+      <div *ngFor="let num of numbs" [ngStyle]="{backgroundColor: num>4 ? 'blue' : 'transparent'}" [ngClass]="{textColor: num>4}">
+        <p>{{ num }}</p>
+      </div>
     </div>
   </div>
 </div>

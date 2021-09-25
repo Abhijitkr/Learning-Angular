@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  count:number = 0;
-  numbs: Number[]= [];
+  count:number = 1;
+  numbs:Number[] = [];
   showSecret = false;
 
   addLogs(){
@@ -16,4 +16,5 @@ export class AppComponent {
     this.numbs.push(this.count);
     this.count++;
   }
+
 }
