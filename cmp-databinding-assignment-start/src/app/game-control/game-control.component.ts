@@ -11,6 +11,7 @@ export class GameControlComponent implements OnInit {
 
   numbs: number[] = [];
   count: number = 1;
+  interval: any;
 
   constructor() { }
 
@@ -18,11 +19,15 @@ export class GameControlComponent implements OnInit {
   }
 
   onStart(){
-    setInterval(()=>{
+    this.interval = setInterval(()=>{
       this.numbs.push(this.count++);
     }, 1000)
 
     this.startGame.emit(this.numbs);
+  }
+
+  onStop(){
+    clearInterval(this.interval);
   }
 
 }
