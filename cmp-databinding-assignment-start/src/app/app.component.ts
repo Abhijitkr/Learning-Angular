@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+emittedNumbers: number[] = [];
+ 
+onGameStart(start: number[]){
+this.emittedNumbers = start;
+}
+
+
 }
