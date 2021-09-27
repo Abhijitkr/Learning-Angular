@@ -9,9 +9,8 @@ export class AppComponent {
 
 emittedNumbers: number[] = [];
  
-onGameStart(start: number[]){
-this.emittedNumbers = start;
+onGameStart(start: number){
+this.emittedNumbers.push(start);
 }
-
 
 }

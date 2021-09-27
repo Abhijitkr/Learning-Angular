@@ -7,9 +7,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
 
-  @Output() startGame = new EventEmitter<number[]>();
+  @Output() startGame = new EventEmitter<number>();
 
-  numbs: number[] = [];
+  // numbs: number[] = [];
   count: number = 1;
   interval: any;
 
@@ -20,10 +20,11 @@ export class GameControlComponent implements OnInit {
 
   onStart(){
     this.interval = setInterval(()=>{
-      this.numbs.push(this.count++);
+      // this.numbs.push(this.count++);
+    this.startGame.emit(this.count);
+    this.count++;
     }, 1000)
-
-    this.startGame.emit(this.numbs);
+    // this.startGame.emit(this.numbs);
   }
 
   onStop(){
