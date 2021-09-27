@@ -22,8 +22,8 @@
       <app-game-control (startGame)="onGameStart($event)"></app-game-control>
     </div>
     <div class="row mt-4">
-        <app-odd *ngFor="let odd of oddNumbers" [checkNumber]="odd"></app-odd>
-        <app-even *ngFor="let even of evenNumbers" [checkNumber]="even"></app-even>
+        <app-odd *ngFor="let odd of oddNumbers" [checkNumber]="odd" [ngStyle]="{color: 'red'}"></app-odd>
+        <app-even *ngFor="let even of evenNumbers" [checkNumber]="even" [ngStyle]="{color: 'green'}"></app-even>
     </div>
   </div>
 </div>
