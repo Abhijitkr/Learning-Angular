@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-emittedNumbers: number[] = [];
- 
-onGameStart(start: number){
-this.emittedNumbers.push(start);
-}
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  onGameStart(start: number) {
+    if(start %2==0){
+      this.evenNumbers.push(start);
+    }else{
+      this.oddNumbers.push(start);
+    }
+  }
 
 }
