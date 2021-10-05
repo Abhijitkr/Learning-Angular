@@ -13,25 +13,38 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
-      <form>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="subscriptions">Email</label>
-          <select type="text" id="subscriptions" name="subscriptions" class="form-control">
-            <option value="Basic">Basic</option>
-            <option value="Advanced">Advanced</option>
-            <option value="Pro">Pro</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control">
-        </div>
-        <button class="btn btn-primary">Submit</button>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" ngModel required email #email="ngModel">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Enter a valid Email!</span>
+          </div>
+          <div class="form-group">
+            <label for="subscriptions">Subscriptions</label>
+            <select type="text" id="subscriptions" name="subscriptions" class="form-control" [ngModel]="defaultSubs" required #subs="ngModel">
+              <option value="Basic">Basic</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Pro">Pro</option>
+            </select>
+            <span class="help-block" *ngIf="!subs.valid && subs.touched">Please select something!</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" ngModel required #password="ngModel">
+            <span class="help-block" *ngIf="!password.valid && password.touched">Enter a valid Password!</span>
+          </div>
+          <span class="help-block" *ngIf="!f.valid && f.touched">Enter a valid Details!</span>
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
       </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf="wasSubmitted">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Your Data</h3>
+      <p>Email: {{formData.email}}</p>
+      <p>Subscription: {{formData.subscription}}</p>
+      <p>Password: {{formData.pass}}</p>
     </div>
   </div>
 </div>
