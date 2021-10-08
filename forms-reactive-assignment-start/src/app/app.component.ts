@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.submitForm.value);
+    this.submitForm.reset();
   }
 
   // forbiddenProjects(control: FormControl): {[s: string]: boolean}{
