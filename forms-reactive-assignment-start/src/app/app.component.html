@@ -15,18 +15,18 @@
           Upon submitting the form, simply print the value to the console
       -->
 
-      <form>
+      <form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="ProjectName">Project Name</label>
-          <input type="text" class="form-control" id="ProjectName">
+          <input type="text" class="form-control" formControlName="projectName" id="ProjectName">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email">
+          <input type="email" class="form-control" formControlName="email" id="email">
         </div>
         <div class="form-group">
           <label for="ProjectStatus">Project Status</label>
-          <select id="ProjectStatus" class="custom-select form-control">
+          <select id="ProjectStatus" class="form-control" formControlName="projectStatus">
             <option value="Stable">Stable</option>
             <option value="Critical">Critical</option>
             <option value="Finished">Finished</option>
