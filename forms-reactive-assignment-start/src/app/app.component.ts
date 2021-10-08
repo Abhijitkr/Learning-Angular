@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.submitForm);
+    console.log(this.submitForm.value);
   }
 
   // forbiddenProjects(control: FormControl): {[s: string]: boolean}{
