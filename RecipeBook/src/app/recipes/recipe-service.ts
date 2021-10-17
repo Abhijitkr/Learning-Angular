@@ -17,6 +17,11 @@ export class RecipeService {
         new Recipe('Another test recipe', 'This is only for testing', 'https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1192&q=80', [new Ingredient('French Fries', 10), new Ingredient('Buns', 2)]),
     ];
 
+    setRecipes(recipes: Recipe[]){
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
+
     getRecipes() {
         return this.recipes.slice();
     }

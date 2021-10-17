@@ -13,9 +13,15 @@ export class DataStorageService {
         this.http.put('https://learning-angular-a1274-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json', recipes)
         .subscribe(
             response => {
-                console.log(response);
-                
+                console.log(response);    
             }
         );
+    }
+
+    fetchRecipe(){
+        this.http.get<Recipe[]>('https://learning-angular-a1274-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json')
+        .subscribe(recipes => {
+            this.recipeService.setRecipes(recipes);
+        });
     }
 }
